@@ -2,6 +2,13 @@
 CREATE DATABASE Movies;
 
 --- Creating the four entities/tables
+--- Categories Table
+CREATE TABLE Categories (
+    CategoryID INT PRIMARY KEY,
+    CategoryName VARCHAR(30) NOT NULL,
+    Notes Text
+);
+
 --- Director Table
 CREATE TABLE Directors (
     DirectorID INT PRIMARY KEY,
@@ -18,13 +25,6 @@ CREATE TABLE Genres (
     Notes Text
 );
 
---- Categories Table
-CREATE TABLE Categories (
-    CategoryID INT PRIMARY KEY,
-    CategoryName VARCHAR(30) NOT NULL,
-    Notes Text
-);
-
 --- Movies Table
 CREATE TABLE Movies (
     MovieID INT PRIMARY KEY,
@@ -34,7 +34,7 @@ CREATE TABLE Movies (
     GenreID INT NOT NULL,
     CategoryID INT NOT NULL,
     Rating Text,
-    Notes Text
+    Notes Text,
     FOREIGN KEY (GenreID) REFERENCES Genres(GenreID),
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
 )
@@ -58,6 +58,11 @@ Queries for manipulating the tables created
  SELECT * FROM Directors
  WHERE CategoryName = 'romance'
  order by CategoryID asc;
+
+--  SELECT d.DirectorID, d.DirectorName, d.CategoryID
+--  FROM Directors d 
+--  WHERE d.CategoryID = 1
+--  ORDER BY d.CategoryID asc;
 
  --- b) iv.
 SELECT MovieID, Title, ReleaseDate FROM Movies
