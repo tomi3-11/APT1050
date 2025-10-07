@@ -55,14 +55,23 @@ Queries for manipulating the tables created
  SELECT CategoryID, CategoryName FROM Categories;
 
  --- b) iii.
- SELECT * FROM Directors
- WHERE CategoryName = 'romance'
- order by CategoryID asc;
+--  SELECT * FROM Directors
+--  WHERE CategoryName = 'romance'
+--  order by CategoryID asc;
 
---  SELECT d.DirectorID, d.DirectorName, d.CategoryID
---  FROM Directors d 
---  WHERE d.CategoryID = 1
---  ORDER BY d.CategoryID asc;
+ SELECT d.DirectorID, d.DirectorName, d.CategoryID
+ FROM Directors d 
+ WHERE d.CategoryID = 1
+ ORDER BY d.CategoryID asc;
+
+--Alternative
+SELECT DirectorID, DirectorName, Directors.CategoryID
+
+FROM Directors 
+
+INNER JOIN Categories
+
+ON Directors.CategoryID = Categories.CategoryID;
 
  --- b) iv.
 SELECT MovieID, Title, ReleaseDate FROM Movies
