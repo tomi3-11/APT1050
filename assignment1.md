@@ -17,6 +17,13 @@ CREATE TABLE tDepartment (
     Location VARCHAR(100) NOT NULL
 )
 
+```
+<div align='center'>
+    <img src="./IMG/Screenshot 2025-10-08 172642.png">
+</div>
+
+```sql
+
 CREATE TABLE tEmployee (
     EmpNo INT PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
@@ -30,6 +37,17 @@ CREATE TABLE tEmployee (
 
 
 ```
+<div align='center'>
+    <img src="./IMG/Screenshot 2025-10-08 172701.png">
+</div>
+
+
+
+
+
+
+
+
 
 
 #### C. Polpulate the tEmployee with 10 records and tDepartment with 4 records
@@ -42,6 +60,14 @@ INSERT INTO tDepartment (DeptNo, DeptName, Location) VALUES
 (20, 'Finance', 'Mombasa'),
 (30, 'IT', 'Kisumu'),
 (40, 'Marketing', 'Eldoret');
+
+```
+<div align='center'>
+    <img src="./IMG/Screenshot 2025-10-08 172826.png">
+</div>
+
+
+```sql
 
 -- Employee table
 INSERT INTO tEmployee (EmpNo, FirstName, LastName, JobTitle, HireDate, Salary, DeptNo) VALUES
@@ -59,12 +85,20 @@ INSERT INTO tEmployee (EmpNo, FirstName, LastName, JobTitle, HireDate, Salary, D
 
 ```
 
+<div align='center'>
+    <img src="./IMG/Screenshot 2025-10-08 172809.png">
+</div>
+
 #### D. Write query to display all fields in tEmployee
 ```sql
 
 SELECT * FROM tEmployee;
 
 ```
+<div align='center'>
+    <img src="./IMG/Screenshot 2025-10-08 172940.png">
+</div>
+
 
 #### E. Write a query to display the employee number, FirstName, LastName and HireDate. From tEmployee displayed in ascending Order using HireDate.
 
@@ -75,6 +109,10 @@ FROM tEmployee
 ORDER BY HireDate asc;
 
 ```
+<div align='center'>
+    <img src="./IMG/Screenshot 2025-10-08 173001.png">
+</div>
+
 
 #### F. Write a query to display the EmpNo, FirstName, LastName and DepName of employees in particular department.
 
@@ -87,6 +125,9 @@ ON tEmployee.DeptNo = tDepartment.DeptNo
 WHERE tDepartment.DeptName = 'Human Resources'
 
 ```
+<div align='center'>
+    <img src="./IMG/Screenshot 2025-10-08 173025.png">
+</div>
 
 
 
