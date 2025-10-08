@@ -43,13 +43,6 @@ CREATE TABLE tEmployee (
 
 
 
-
-
-
-
-
-
-
 #### C. Polpulate the tEmployee with 10 records and tDepartment with 4 records
 
 ```sql
@@ -145,6 +138,13 @@ CREATE TABLE tHotel (
     City VARCHAR(50) NOT NULL
 );
 
+```
+
+<div align='center'>
+    <img src='./IMG/Screenshot 2025-10-08 191306.png'>
+</div>
+
+```sql
 CREATE TABLE tRoom (
     roomNo INT,
     hotelNo INT,
@@ -153,12 +153,26 @@ CREATE TABLE tRoom (
     PRIMARY KEY (roomNo, hotelNo),
     FOREIGN KEY (hotelNo) REFERENCES tHotel(hotelNo)
 );
+```
+<div align='center'>
+    <img src='./IMG/Screenshot 2025-10-08 191531.png'>
+</div>
+
+
+```sql
 
 CREATE TABLE tGuest (
     guestNo INT PRIMARY KEY,
     guestName VARCHAR(100) NOT NULL,
     guestAddress VARCHAR(150) NOT NULL
 );
+```
+
+<div align='center'>
+    <img src='./IMG/Screenshot 2025-10-08 191248.png'>
+</div>
+
+```sql
 
 CREATE TABLE tBooking (
     hotelNo INT,
@@ -173,6 +187,10 @@ CREATE TABLE tBooking (
 );
 
 ```
+
+<div align='center'>
+    <img src='./IMG/Screenshot 2025-10-08 191223.png'>
+</div>
 
 #### b. Populate each of the Tables with at least 10 records
 
@@ -190,7 +208,13 @@ INSERT INTO tHotel VALUES
 (8, 'Riverfront Hotel', 'Dallas'),
 (9, 'Skyline Suites', 'Seattle'),
 (10, 'Harbor Hotel', 'Boston');
+```
 
+<div align='center'>
+    <img src='./IMG/Screenshot 2025-10-08 191326.png'>
+</div>
+
+```sql
 -- Rooms (at least 2 per hotel)
 INSERT INTO tRoom VALUES
 (101, 1, 'Single', 120.00), (102, 1, 'Double', 180.00),
@@ -203,7 +227,13 @@ INSERT INTO tRoom VALUES
 (801, 8, 'Double', 200.00), (802, 8, 'Suite', 320.00),
 (901, 9, 'Single', 180.00), (902, 9, 'Double', 240.00),
 (1001, 10, 'Single', 160.00), (1002, 10, 'Suite', 280.00);
+```
 
+<div align='center'>
+    <img src='./IMG/Screenshot 2025-10-08 191810.png'>
+</div>
+
+```sql
 -- Guests
 INSERT INTO tGuest VALUES
 (1, 'Alice Johnson', '123 Main St, New York'),
@@ -216,8 +246,14 @@ INSERT INTO tGuest VALUES
 (8, 'Henry Young', '505 River St, Dallas'),
 (9, 'Ivy King', '606 Skyline Ave, Seattle'),
 (10, 'Jack Wilson', '707 Harbor Ln, Boston');
+```
 
--- Bookings (valid foreign keys only)
+<div align='center'>
+    <img src='./IMG/Screenshot 2025-10-08 191838.png'>
+</div>
+
+```sql
+-- Bookings
 INSERT INTO tBooking VALUES
 (1, 1, 101, '2025-10-01', '2025-10-05'), -- Alice, New York
 (1, 2, 102, '2025-09-20', '2025-09-25'), -- Bob, New York
@@ -230,8 +266,11 @@ INSERT INTO tBooking VALUES
 (9, 9, 901, '2025-02-12', '2025-02-16'), -- Ivy, Seattle
 (10, 10, 1001, '2025-01-20', '2025-01-25'); -- Jack, Boston
 
-
 ```
+
+<div align='center'>
+    <img src='./IMG/Screenshot 2025-10-08 191158.png'>
+</div>
 
 #### c. Write a query to display the names of quests booked in a particular hotel in *New York* . Your query should retrieve some records.
 
@@ -248,3 +287,7 @@ INNER JOIN tHotel ON tBooking.hotelNo = tHotel.hotelNo
 WHERE tHotel.City = 'New York';
 
 ```
+
+<div align='center'>
+    <img src='./IMG/Screenshot 2025-10-08 192053.png'>
+</div>
